@@ -34,7 +34,7 @@
 </body>
 </html> -->
 
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +57,71 @@
             // document.getElementById("myInput").setAttribute("type", "hidden")
             document.getElementById("myInput").setAttribute("style","background-color:green");
         }
+    </script>
+</body>
+</html> -->
+
+<!-- Adding and deleting Elements -->
+ <!-- document.createElement(element) -> Create an HTMl element -->
+ <!-- document.removeChild(element) -> Remove an HTMl element -->
+ <!-- document.appendChild(element) -> Add an HTMl element -->
+ <!-- document.replaceChild(new,old) -> Replace an HTMl element -->
+ <!-- document.write(text) -> Write into the HTML outstream-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Remove the Element</h1>
+    <p id="demo"> Click remove to remove the paragraph from HTML DOM</p>
+    <br>
+    <button onclick="myfunction()">Remove</button>
+
+    <script>
+        // here on calling this function we are manupilating the DOM and deleting the element from the DOM tree.
+        function myfunction(){
+        const removePara = document.getElementById("demo");
+        removePara.remove();
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manupilating</title>
+</head>
+<body>
+    <h1>The Element Object</h1>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <p>Click on "Replace" to replace the second item in the list</p>
+
+    <button onclick="myfunctionReplace()">Replace</button>
+
+    <script>
+        function myfunctionReplace(){
+        //list instance is taken (1st index) -> Tea (.children[index])
+        const listInstance = document.getElementById("myList").children[1];
+        //create a new text node
+        const newNode = document.createTextNode("Juice");
+        //replace the text node
+        listInstance.replaceChild(newNode, listInstance.children[0]);
+        }
+        
     </script>
 </body>
 </html>
