@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Javascript HTML DOM</h1>
+    <p>Finding the HTML elements using <b>document.forms</b></p>
+
+    <form id="form1">
+        First Name : <input type="text" name="firstName" value="Karan">
+        Last Name : <input type="text" name="lastName" value="Chourasia">
+        <br><br>
+        <input type="submit" onclick="fxnBtn()">
+    </form>
+
+    <p>These are the values of each elements in the form</p>
+
+    <p id="para-demo"></p>
+
+    <script>
+       function fxnBtn(){
+            const form = document.forms['form1'];
+            let text = "";
+            for(let i = 0; i < form.length; i++){
+                text += form.elements[i].value + "<br>";
+            }
+            document.getElementById("para-demo").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

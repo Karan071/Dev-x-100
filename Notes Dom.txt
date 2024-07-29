@@ -1,0 +1,6 @@
+ # DOM
+
+- For accessing the Elements we use  : getElementById() -> Method to get an element from the  document by its unique id attribute.
+- For accessing the Tags we use  : getElementByTagname() -> To get one or more tags names together
+- For accessing the class we use  : getElementByClassname() -> To get one or more classes together
+- 

@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title> Understanding DOM </title>
 </head>
 
 <body>
@@ -18,10 +17,11 @@
   </form>
 
   <p>Click on the button to display the number of elements in the form </p>
-  <button onclick="functionBtn()">Try it</button>
 
+  <button onclick="funcInsert()">Try it</button>
+  <!-- using the DOM we are creating inserting some text into the document into the para tag id = "displaySpace"-->
   <p id="displaySpace"></p>
-  <script>
+  <!-- <script>
   function functionBtn(){
     var length = document.getElementById("LoginForm").elements.length;
     var firstName = document.getElementById("LoginForm").elements[0].value;
@@ -30,12 +30,29 @@
     var email = document.getElementById("LoginForm").elements[3].value;
 
     document.getElementById("displaySpace").innerHTML = "The first name of the individual: " + firstName + " <br> and the last name is: " + lastName + "<br> and the number of elements is " + length + "<br> The email address is " + email + " <br> and phone number is : " + PhoneNumber;
-
   }
-    
-  </script>
+  </script> -->
   
+<!-- now we'll insert a new tag into the DOM : when we'll click into the button the tag will be injected -->
+ <!-- <script>
+    function funcInsert(){
+    const para = document.createElement("p");
+    para.innerText = "This is a paragraph created by DOM";
+    document.body.appendChild(para);
+    }
+ </script> -->
 
+ <h2> Javascript into HTML DOM </h2>
+ <p>Finding elements by classes</p>
+ <p class="Demo">Hello World</p>
+ <p class="Demo">example demonstrate the use case of classes</p>
+
+ <p id="class-demo"></p>
+
+ <script>
+  const x = document.getElementsByClassName('Demo');
+  document.getElementById("class-demo").innerHTML = "The first paragraogh (index 0) with class = 'demo' is : " + x[1].innerHTML;
+ </script>
   
 
 </body>
