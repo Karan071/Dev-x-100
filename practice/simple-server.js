@@ -23,9 +23,13 @@ app.get('/interest', function(req, res){
 
     const calculate = (p*r*t)/100;
 
-    res.status(200).send(calculate.toString())
-
-
+    if(isNaN(p) || isNaN(r) || isNaN(t)){
+        return res.status(411).json({
+            msg : "inputs are in wrong format"
+        });
+    }else{
+        res.status(200).send(calculate.toString());
+    }
 })
 
 //global catches
