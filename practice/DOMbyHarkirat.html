@@ -9,7 +9,19 @@
     function functionAdd(){
         const a = document.getElementById("num-1").value;
         const b = document.getElementById("num-2").value;
-        const elements = document.getElementById("display").innerHTML = parseInt(a) + parseInt(b);
+        // const elements = document.getElementById("display").innerHTML = parseInt(a) + parseInt(b);
+        fetch("https://sum-server.100xdes.com/sum?a=" + a + "&b=" + b)
+        // .then(function(response){
+        //     console.log(response);
+
+        //     response.text()
+        //     .then(function(ans){
+        //         // console.log(ans);
+        //         document.getElementById("display").innerHTML = ans;
+
+        //     })
+        // })
+
     }
 </script>
 
