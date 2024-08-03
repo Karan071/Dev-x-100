@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+</head>
+<script>
+function functionTodo(){
+    const title = document.getElementById("title_todo").value;
+    const description = document.getElementById("title_description").value;
+    
+    
+    // This is the ugly way to make a todo application -> so we'll use document.createElement;
+
+    // const originalHTML =  document.getElementById("todos-space").innerHTML;
+    // document.getElementById("todos-space").innerHTML = originalHTML + `
+    // <div>
+    //     <div>${title}<div>
+    //     <div>${description}<div>
+    //     <button>Mark as done</button>
+    // <div>
+    // `
+
+    // using ~
+}
+
+</script>
+
+<body>
+    <h1>To do list</h1>
+        <input type="text" name="todo" placeholder="ToDo Title" id="title_todo"><br><br>
+        <input type="text" name="todo-description" placeholder="ToDo Description" id="title_description"><br><br>
+        <input type="button" onclick="functionTodo()" value="Add Todo">
+
+    <div id="todos-space"></div>
+
+</body>
+</html>
