@@ -6,10 +6,14 @@
     <title>To-do List</title>
 </head>
 <script>
-function functionTodo(){
-    const title = document.getElementById("title_todo").value;
-    const description = document.getElementById("title_description").value;
-    
+    let globalId = 1;
+
+    function OnDone(todoId)
+
+// function functionTodo(){
+//     const title = document.getElementById("title").value;
+//     const description = document.getElementById("description").value;
+     
     
     // This is the ugly way to make a todo application -> so we'll use document.createElement;
 
@@ -22,15 +26,49 @@ function functionTodo(){
     // <div>
     // `
 
-    // using ~
-}
+    // // using ~ document.createElement
+    // const outerDiv = document.createElement("div");// we are creating a new div using the DOM manupulations
+    // outerDiv.innerHTML = title;
+    // document.getElementById("todos-space").appendChild(outerDiv);
+
+
+    function createChild(title, description, id){
+        // structure we have create for the child div(main div)
+        const child = document.createElement("div");
+        const firstGrandChild = document.createElement("div");
+        const secondGrandChild = document.createElement("div");
+        const thirdGrandChild = document.createElement("button");
+
+        firstGrandChild.innerHTML = title;
+        secondGrandChild.innerHTML = description;
+        thirdGrandChild.innerHTML = "Mark as done";
+
+        thirdGrandChild.setAttribute("onclick", marksAsDone(${id}));
+        
+        
+        child.appendChild(firstGrandChild)
+        child.appendChild(secondGrandChild)
+        child.appendChild(thirdGrandChild)
+        child.setAttribute("id", id);
+        return child;
+    }
+
+    function addTodo(){
+        const title = document.getElementById("title")
+        const description = document.getElementById("description")
+        const parent = document.getElementById("todo-space")
+
+        parent.appendChild(title,description,globalId++);
+
+    }
 
 </script>
 
+
 <body>
     <h1>To do list</h1>
-        <input type="text" name="todo" placeholder="ToDo Title" id="title_todo"><br><br>
-        <input type="text" name="todo-description" placeholder="ToDo Description" id="title_description"><br><br>
+        <input type="text" name="todo" placeholder="ToDo Title" id="title"><br><br>
+        <input type="text" name="todo-description" placeholder="ToDo Description" id="description"><br><br>
         <input type="button" onclick="functionTodo()" value="Add Todo">
 
     <div id="todos-space"></div>

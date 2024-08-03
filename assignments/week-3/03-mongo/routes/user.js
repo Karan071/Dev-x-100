@@ -31,25 +31,36 @@ router.get('/courses', async (req, res) => {
 
 });
 
-router.post('/courses/:courseId', userMiddleware, async(req, res) => {
+router.post('/courses/:courseId', userMiddleware, async (req, res) => {
     // Implement course purchase logic
     const courseId = req.params.courseId;
     const username = req.headers.username;
-
+    try{
     await User.updateOne({
-        username: username
+        username: username 
     }, {
         "$push": {
-            purchasedCourses: courseId
+            purchasedCourse: courseId
         }
     })
     res.json({
         message: "Purchase complete!"
     })
+    }catch(e){
+        console.log(e);
+    }
 });
 
-router.get('/purchasedCourses', userMiddleware, (req, res) => {
+router.get('/purchasedCourses', userMiddleware, async (req, res) => {
     // Implement fetching purchased courses logic
+    const user = User.findOne({
+        usernname : req.header.username
+    });
+    console.log(user,purchasedCourse)
+    res.json({
+        msg : "hi there"
+    })
+    
 
 });
 
