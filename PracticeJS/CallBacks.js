@@ -44,3 +44,4 @@ function sumOfSomething(a, b, fn){
 
 console.log(sumOfSomething(5,10,squareFun));
 console.log(sumOfSomething(5,10,cubeFun));
+
